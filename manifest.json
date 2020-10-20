@@ -1,0 +1,33 @@
+{
+    "name": "EqualCopy",
+    "version": "1.0",
+    "description": "A chrome extension for copying and modifying text to fit your text document",
+    "permissions": ["storage", "declarativeContent", "clipboard-write", "clipboard-read"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": [
+            // for specific urls: ["https://docs.google.com/*", "http://docs.google.com/*"]
+            "<all_urls>"
+        ],
+        "js": ["popup.js"]
+    }],
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "assets/equalcopy16.png",
+            "32": "assets/equalcopy32.png",
+            "48": "assets/equalcopy48.png",
+            "128": "assets/equalcopy128.png"
+        },
+        "icons": {
+            "16": "assets/equalcopy16.png",
+            "32": "assets/equalcopy32.png",
+            "48": "assets/equalcopy48.png",
+            "128": "assets/equalcopy128.png"
+        },
+    },
+    "manifest_version": 2
+}
